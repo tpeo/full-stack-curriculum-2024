@@ -3,7 +3,7 @@
 # Fork Environment
 This repository will be using a fork structure, meaning that fellows will **commit to their own local respository** while **pulling new weekly content from this one**. Weekly content will be updated on the master branch, but a copy of all previous week's content will be available via branches.
 
-**Note: From now on we will be referring to the tpeo/full-stack-curriculum-2023 project as the **main** repo and other repositories as the **forked** repo. 
+**Note: From now on we will be referring to the tpeo/full-stack-curriculum-2024 project as the **main** repo and other repositories as the **forked** repo. 
 ## Forking the Repository 
 Navigate to a directory where you'd like to keep all your projects. If you haven't already, we would recommend creating a folder like ```GitHub_Projects```
 1. Go onto the **main** repository's Github page and click the **Fork** button
