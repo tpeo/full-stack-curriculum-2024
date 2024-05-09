@@ -1,4 +1,4 @@
-# Welcome to the TPEO 2023 Full Stack Curriculum!
+# Welcome to the TPEO 2024 Full Stack Curriculum!
 
 # Fork Environment
 This repository will be using a fork structure, meaning that fellows will **commit to their own local respository** while **pulling new weekly content from this one**. Weekly content will be updated on the master branch, but a copy of all previous week's content will be available via branches.
