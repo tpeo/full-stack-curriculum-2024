@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List Example</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Shopping List</h1>
+
+      <div>
+          <label for="item">Enter a new item:</label>
+          <input type="text" name="item" id="item">
+
+          <!-- add an onclick to the button - createListItem(), explain how to do this in html -->
+          <button>Add item</button>
+      </div>
+
+      <ul id="Shopping-List"></ul>
+    </div>
+
+    <script>
+      
+      // Step 1 
+      // Handle Initial Start-up - Basically checking to see if there are any items in local storage right now 
+      // Explain that upon starting the program, the first think we have to check is whether any shopping items already exist, a non-persistent list would be useless
+      // because the list we created would be gone
+      // 1. pull the most recent version from localStorage!
+      // 2. Handle edge case... if it's null, set to empty array
+      // 3. else - add each item to HTML by calling addItem() for every item in the shoppingList
+      
+      // Step 2 
+      // Create createListItem() method - Handles overhead of adding items to list - Helper Method
+      // 1. Select #item - document.querySelector("#item")
+      // 2. Call addItem with input value 
+      // 3. Clear the input box and set the focus back to the textbox
+
+      //conveniently done for you!
+      //manipulates HTML directly - grabs the list and pushes a new list item to it
+      function addItem(text) {
+        //grab the list
+        const list = document.querySelector("ul");
+
+        //create new elements
+        const li = document.createElement("li");
+        const span = document.createElement("span");
+        const deleteButton = document.createElement("button");
+        const saveButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        saveButton.innerText = "Save";
+        span.innerText = text;
+
+        list.appendChild(li);
+        li.appendChild(span);
+        li.appendChild(deleteButton);
+        li.appendChild(saveButton);
+
+        // Step 3 
+        // Make the delete button functional - Explain that there are essentially three steps 
+        // 1. Removing from the dom via list.removeChild(li)
+        // 2. Remove it from our shopping list array 
+        // 3. Remove it from localStorage by setting overriding the current shoppinglist in local storage with the updated one 
+        // Explain the importance of immediately updating local storage - If we deleted something without updating local storage, when we refresh the page it would still be there 
+        // Explain how we add an EventListener that triggers whenever the button is clicked
+        
+        // Make the save button functional - Explain that there are essentially three steps, it's pretty similar to delete functionality
+        // 1. Add the item to our shoppinglist array 
+        // 2. Update our local storage
+        // 3. Update the UI - This is already handled for us
+        // Ask them to think about any edge cases - explain that we have to check if item already exists, don't want to allow duplicates
+        // Explain that console.log() is useful for checking the state of our program - local storage, arrays etc. 
+      }
+
+    </script>
+  </body>
+</html>
