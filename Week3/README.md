@@ -83,3 +83,6 @@ Flex 💪 your CSS skills by modifying the weather website to be as attractive a
 - `git commit -m "<message>"`: Commit the staged changes with a message.
 - `git push`: Push your local commits to the remote repository.
 - `git pull`: Pull the latest changes from the remote repository.
+
+3. **(NEW) Running JavaScript files from the terminal**:
+- `node <filename>`: Runs the JavaScript file. 
