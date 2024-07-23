@@ -31,3 +31,33 @@ npm start
 # Homework
 
 For homework this week, we are going to be recreating the weather app from last week, but in React! Check out the weather-app folder for further instructions.
+
+## Commonly Used Terminal Commands (cont.)
+
+1. **Navigate the File Directory**:
+- `ls`: List the contents of the current directory.
+- `cd <directory>`: Change the current working directory.
+
+2. **Basic Git Commands**:
+- `git add <file>`: Stage a file for commit.
+- `git commit -m "<message>"`: Commit the staged changes with a message.
+- `git push`: Push your local commits to the remote repository.
+- `git pull`: Pull the latest changes from the remote repository.
+
+3. **Running JavaScript files from the terminal**:
+- `node <filename>`: Runs the JavaScript file.
+
+  ## React-Specific Terminal Commands
+
+1. **Create a New React App (with Custom Folder Location)**:
+   - `npx create-react-app my-app`: Creates a new React project named "my-app" in the current directory. You can replace "my-app" with your desired folder name. Replacing "my-app" with "." creates a React project in the current folder.
+
+2. **Start the Development Server**:
+   - `npm start`: Starts the development server and opens the app in your default browser.
+
+3. **Build for Production**:
+   - `npm run build`: Builds the app for production, creating an optimized bundle.
+
+4. **Install Dependencies**:
+   - `npm install <package-name>`: Installs a specific package (e.g., `react-router-dom`).
+   - If you run `npm install` without specifying a package name, it installs all dependencies listed in your `package.json` file.
