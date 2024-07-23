@@ -105,5 +105,7 @@ In this part of the course, you'll be setting up Firebase to build the backend f
 2. **Running an Express.js Server Individually**
    - Open a terminal and navigate to your Express.js project folder.
    - Run the following command to start your Express server (assuming your entry point is server.js, if you named it index.js, that's the file you'd run):
-      - node server.js
+      - ```javascript
+        node server.js
+        ```
    - Your Express app will be accessible at http://localhost:5000/ (or the specified port).
