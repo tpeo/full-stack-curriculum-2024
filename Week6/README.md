@@ -93,3 +93,17 @@ In this part of the course, you'll be setting up Firebase to build the backend f
    ```
 
    - Make sure to use this ID in your responses to the caller. It'll be crucial when you're performing operations like updating or deleting specific tasks. Good luck!
+
+## Backend-Specific Terminal Commands
+
+1. **Running Two Terminals in VSCode:**
+   - Open your project folder in VSCode.
+   - To split the terminal into two, click the split icon (two boxes) in the terminal panel.
+   - You’ll have two terminals side by side—one for React and one for Express.
+   - (You can also simply just click the "+" symbol to create a new terminal and flip between the two.)
+  
+2. **Running an Express.js Server Individually**
+   - Open a terminal and navigate to your Express.js project folder.
+   - Run the following command to start your Express server (assuming your entry point is server.js, if you named it index.js, that's the file you'd run):
+      - node server.js
+   - Your Express app will be accessible at http://localhost:5000/ (or the specified port).
