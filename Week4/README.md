@@ -47,7 +47,7 @@ For homework this week, we are going to be recreating the weather app from last 
 3. **Running JavaScript files from the terminal**:
 - `node <filename>`: Runs the JavaScript file.
 
-  ## React-Specific Terminal Commands
+## React-Specific Terminal Commands
 
 1. **Create a New React App (with Custom Folder Location)**:
    - `npx create-react-app my-app`: Creates a new React project named "my-app" in the current directory. You can replace "my-app" with your desired folder name. Replacing "my-app" with "." creates a React project in the current folder.
@@ -61,3 +61,6 @@ For homework this week, we are going to be recreating the weather app from last 
 4. **Install Dependencies**:
    - `npm install <package-name>`: Installs a specific package (e.g., `react-router-dom`).
    - If you run `npm install` without specifying a package name, it installs all dependencies listed in your `package.json` file.
+  
+5. **Terminate the Server**:
+   - If you're in the terminal where the development server is running, press `Ctrl + C` (or `Cmd + C` on macOS). This will terminate the server process.
