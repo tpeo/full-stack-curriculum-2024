@@ -13,25 +13,27 @@ export default function App() {
     lname: "Kent"
   });
 
-  // 1. We want to increase the counter by one on render, why does it increase by more than one?
+  // 1. Counter increased by more than one because we included counter in the dependency array.
+  // this causes a feedback loop in which the first update updates counter, which triggers the
+  // useEffect to run, which updates counter, etc.
   useEffect(() => {
     setCounter(counter + 1);
-  }, []);
+  }, []); //used to have counter here
 
-  // 2. We want to log out the value of counterTwo after we increase it, why doesn't it log the new value?
-  // How would you log the new value rather than the old one?
+  // 2. You won't see the update until AFTER some time; it takes time for the change to actually
+  // be displayed in React
   const setCountValue = () => {
     setCounterTwo(counterTwo + 1);
     // console.log("Counter Two Value is ", counterTwo); // Bug 2: It logs the old state value
   };
 
+  //This will trigger and print out the new value on counterTwo's change 
   useEffect(() => {
     console.log("Counter Two Value is ", counterTwo);
   }, [counterTwo]);
 
-  // Fix Bug 1 first!
-  // 3. Here, we have a function to change the "name" state variable, why doesn't it work?
-  // 3.1. Bonus: if you click "Change name" then click "Increase Count Two", the name changes magically
+  //3. You shouldn't change the internal values of a state variable directly; Use the set function
+  //you created with useState!
   const changeName = () => {
     // Bug 3: Directly trying to modify the state object
     //name.fname = "Bruce";
@@ -41,7 +43,11 @@ export default function App() {
   };
 
 
-  // 4. We want to increase the counter by one every second, but it doesn't work as expected.
+  // 4. Tricky! In the previous example, when we created the callback function, we actually
+  //take a snapshot of what the value of time was at the point. So, everytime setInterval is called,
+  //it just uses the very first value of time. To make sure that the time variable changes every second,
+  //we use the form (variable) => (something done to variable) to create a rule that React uses to
+  //update our variable
   useEffect(() => {
     const interval = setInterval(() => {
       //Bug 4: setTime(time + 1)
