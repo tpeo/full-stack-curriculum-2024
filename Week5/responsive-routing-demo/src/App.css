@@ -1,0 +1,66 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Navigation styles */
+.nav {
+  background-color: #282c34;
+  padding: 10px;
+}
+
+.nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design with media queries */
+.content {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 10px;
+  }
+
+  .nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+@media (min-height: 800px) {
+  .content {
+    height: 100vh;
+  }
+}
+
+/* Contrast: Hardcoded vs responsive (for demonstration purposes) */
+.fixed-height {
+  height: 400px; /* Hardcoded height */
+  background-color: lightcoral;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.responsive-height {
+  height: 50vh; /* Responsive height */
+  background-color: lightseagreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
