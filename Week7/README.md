@@ -1,6 +1,6 @@
 # Week 7: Authentication and Authorization
 
-We've done a lot of backend work so far. We've learned how to write endpoints, connect to databases (Firebase), and now understand how authentication works by hand! This week is our last week fully focused on backend topics. We'll be exploring service providers that make the authentication process MUCH easier and automatic, as well as learn how to host our applications! You will finally be able to see your websites on the web!
+We've done a lot of backend work so far. We've learned how to write endpoints, connect to databases (Firebase), and now understand how authentication works by hand! This week is our last week fully focused on backend topics. We'll be exploring service providers that make the authentication process MUCH easier and automatic! You will soon finally be able to see your websites on the web!
 
 # Materials
 
