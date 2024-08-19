@@ -1,5 +1,5 @@
 * {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* use border to show the idea of boxes in CSS, can delete afterwards */
@@ -8,7 +8,7 @@
 } */
 
 h1 {
-    color: rgb(38, 0, 255);
+    color: rgb(0, 0, 255);
     font-size: 48px;
     text-align: center;
 }
@@ -36,7 +36,6 @@ span, label, button {
     /* show the responsiveness with wrap */
     flex-wrap: wrap; 
     gap: 10px;
-    
 }
 
 /* another example of padding vs margin */
@@ -52,7 +51,7 @@ input {
 /* wait a second, the color input looks really weird */
 #color {
     padding: 0px;
-    border-radius: 0px;
+    border: 0px;
     background-color: white;
 }
 
@@ -69,12 +68,7 @@ input {
     margin-bottom: 1%;
 }
 
-.gender {
-    margin-right: 0px;
-}
-
 /* they can mess around with the calendar and other dropdowns on their own, focus on the button */
-
 button {
     margin-top: 0px;
     border-radius: 10px;
@@ -87,8 +81,10 @@ button {
     text-transform: uppercase;
     font-weight: bold;
 
-    background-color: rgb(190, 190, 190);
-    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.5);
+    background-color: rgb(216, 216, 216);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+
+    cursor: pointer;
     
     transition: background-color 0.5s ease;
 }
