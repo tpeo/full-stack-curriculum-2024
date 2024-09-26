@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Weather APIs</title>
+	<meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div id='main-container'>
+		<h4 id='lat'></h4>
+		<h4 id='lon'></h4>
+		<h4 id='temp'></h4>
+		<button id='getTemp' onclick="getData()">Get Temp Jaco CR</button>
+	</div>
+</body>
+
+<script>
+		// STEP 1: Change the API key
+		const apiKey = "ef1f35837935c10aaff7672f865d5fd6";
+
+		let temp;
+		let lat;
+		let lon;
+
+		function getData() {
+			// STEP 2: Call the API to get latitude and longitude
+			let apiCall = `http://api.openweathermap.org/geo/1.0/direct?appid=${apiKey}&q=Jaco,CR&limit=5`;
+			fetch(apiCall)
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+					// STEP 3: Work with the retrieved data
+					lat = data[0].lat;
+					lon = data[0].lon;
+					// STEP 4: Render the latitude and longitude on the HTML page
+					renderLatLon();
+					// STEP 5: Call the function to get the temperature
+					// what would happen if this wasn't in the .then?
+					getTemp();
+				});
+		}
+
+		function renderLatLon() {
+			document.querySelector('#lat').innerText = 'Lat: ' + lat;
+			document.querySelector('#lon').innerText = 'Lon: ' + lon;
+		}
+
+		function getTemp() {
+			// STEP 6: Call the API to get the temperature
+			let apiCall = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+			fetch(apiCall)
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+					// STEP 7: Work with the retrieved temperature data
+					temp = data.main.temp;
+					// STEP 8: Render the temperature on the HTML page
+					renderTemp();
+				});
+		}
+
+		function renderTemp() {
+			document.querySelector('#temp').innerText = 'Temp: ' + temp;
+		}
+	</script>
+</html>
