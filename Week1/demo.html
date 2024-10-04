@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<!-- The <!DOCTYPE html> declaration defines that this document is an HTML5 document -->
+
+<html lang="en">
+<!-- The <html> element is the root element of an HTML page -->
+
+<!-- The <head> element contains meta information about the HTML page -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The <title> element specifies a title for the HTML page 
+        (which is shown in the browser's title bar or in the page's tab) -->
+    <title>HTML Demo Form</title>
+</head>
+
+<!-- The <body> element defines the document's body, and is a container for all the visible contents, 
+    such as headings, paragraphs, images, hyperlinks, tables, lists, etc. -->
+<body>
+    <h1>Create Your Account</h1>
+    <hr></hr>
+    
+    <!-- Input for the name -->
+    <div>
+        <span>Name: </span>
+        <input></input>
+    </div>
+    <br></br>
+    <!-- Input for the username -->
+    <div>
+        <span>Username: </span>
+        <input></input>
+    </div>
+    <br></br>
+    <!-- Input for the password -->
+    <div>
+        <span>Password: </span>
+        <input></input>
+    </div>
+    <br></br>
+    <!-- In order for only one item to be selected, they must all have the same name -->
+    <div>
+        <span>Gender: </span>
+        <!-- What 'name' attribute does: This groups the radio buttons together. 
+         All inputs with the same name value are considered part of the same group of radio buttons. -->
+        <input type="radio" name="gender" value="male" id="male">
+        <label>Male</label>
+        
+        <!-- The 'id' uniquely identifies an element on the page. 
+         In this case, each input (radio button) has a corresponding id ("male", "female", "other"). -->
+        <input type="radio" name="gender" value="female" id="female">
+        <label>Female</label>
+        
+        <input type="radio" name="gender" value="other" id="other">
+        <label>Other</label>
+    </div>
+    <br></br>
+
+    <div>
+        <span>Major: </span>
+    <input type="checkbox" value="CS">
+        <label>CS</label>
+    </input>
+    <input type="checkbox" value="female">
+        <label>Engineering</label>
+    </input>
+    <input type="checkbox" value="other">
+        <label>Other</label>
+    </input>
+    </div>
+    <br></br>
+
+    <div>
+        <span>Birthday: </span>
+        <input type="date" value="male"></input>
+    </div>
+    <br></br>
+    <div>
+        <label>Year:</label>
+        <select id="year" name="year">
+            <option value="freshman">Freshman</option>
+            <option value="sophomore">Sophomore</option>
+            <option value="junior">Junior</option>
+            <option value="senior">Senior</option>
+        </select>
+    </div>
+    <br></br>
+
+    <div>
+        <!--  Links the <label> to the corresponding input field via the input’s id. 
+            For example, <label for="colorPicker">Color:</label> is associated with <input id="colorPicker">. -->
+        <label for="colorPicker">Color:</label>
+        <input type="color" name="color">
+    </div>
+    <br></br>
+
+    <br></br>
+    <button>Submit</button>
+    
+</body>
+</html>
