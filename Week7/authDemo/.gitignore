@@ -1,8 +1,0 @@
-# dependencies
-/node_modules
-
-# env
-.env
-
-#don't store your cred.json on your remote repo
-cred.json
