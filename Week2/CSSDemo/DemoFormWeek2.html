@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<!-- The <!DOCTYPE html> declaration defines that this document is an HTML5 document -->
+
+<html lang="en">
+<!-- The <html> element is the root element of an HTML page -->
+
+<!-- The <head> element contains meta information about the HTML page -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The <title> element specifies a title for the HTML page 
+        (which is shown in the browser's title bar or in the page's tab) -->
+    <title>HTML Demo Form</title>
+    <!-- Link for the style sheet -->
+    
+</head>
+
+<!-- The <body> element defines the document's body, and is a container for all the visible contents, 
+    such as headings, paragraphs, images, hyperlinks, tables, lists, etc. -->
+<body>
+    <h1>Create Your Account</h1>
+    <hr></hr>
+    
+    <div id="basic-inputs">
+        <!-- Input for the name -->
+        <div>
+            <span>Name: </span>
+            <input></input>
+        </div>
+        <br></br>
+        <!-- Input for the username -->
+        <div>
+            <span>Username: </span>
+            <input></input>
+        </div>
+        <br></br>
+        <!-- Input for the password -->
+        <div>
+            <span>Password: </span>
+            <input></input>
+        </div>
+    </div>
+
+    <br></br>
+    <!-- In order for only one item to be selected, they must all have the same name -->
+    <div id="gender-div">
+        <span>Gender: </span>
+        <!-- What 'name' attribute does: This groups the radio buttons together. 
+         All inputs with the same name value are considered part of the same group of radio buttons. -->
+         <div class="gender-option">
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="male">Male</label>
+        </div>
+        <div class="gender-option">
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">Female</label>
+        </div>
+        <div class="gender-option">
+            <input type="radio" name="gender" value="other" id="other">
+            <label for="other">Other</label>
+        </div>
+    </div>
+    <br></br>
+    
+    <div>
+        <label for="year">Year:</label>
+        <select id="year" name="year">
+            <option value="freshman">Freshman</option>
+            <option value="sophomore">Sophomore</option>
+            <option value="junior">Junior</option>
+            <option value="senior">Senior</option>
+        </select>
+    </div>
+    <br></br>
+
+    <div>
+        <!--  Links the <label> to the corresponding input field via the input’s id. 
+            For example, <label for="colorPicker">Color:</label> is associated with <input id="colorPicker">. -->
+        <label for="colorPicker">Color:</label>
+        <input type="color" name="color" id="color">
+    </div>
+    <br></br>
+
+    <div>
+        <label>Comments: </label>
+        <input type="text">
+    </div>
+
+    <br></br>
+    <button>Submit</button>
+    
+</body>
+</html>

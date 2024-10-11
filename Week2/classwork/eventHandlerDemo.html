@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling Examples</title>
+    <style>
+        /* Style for the creative example */
+        .creative-div {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Handling Examples</h1>
+
+    <!-- Example #1: Button Click Event -->
+    <button class="button">Click me!</button>
+
+    <script>
+        // Example #1: Button Click Event
+    </script>
+
+    <!-- Example #2: Input Keyup Event -->
+    <input type="text" placeholder="Type something">
+
+    <script>
+        // Example #2: Input Keyup Event
+    </script>
+
+    <!-- Example #3: Mouse Enter Event -->
+    <div class="creative-div">Hover me!</div>
+
+    <script>
+        // Example #3: Mouse Enter Event
+
+        function changeSomething() {
+            const colors = ["red", "green", "blue", "orange", "purple"];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            creativeDivElement.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
