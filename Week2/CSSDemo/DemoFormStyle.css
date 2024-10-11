@@ -1,0 +1,128 @@
+/* Preface: HTML was updated with some classNames and IDs. Use the HTML file inside the week 2 folder. */
+/* First step: Add <link> tag inside the HTML file */
+
+/* Accessing and changing the whole file in CSS */
+
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0px;
+}
+
+/* Accessing tags in CSS */
+/* ASK: How do we access elements based on their tag in CSS? */
+
+/* Uncomment to see the box model */
+
+/* div,
+  h1,
+  body {
+    border: 1px solid;
+  } */
+
+h1 {
+  color: rgb(0, 0, 255);
+  font-size: 48px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+hr {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 1px solid;
+}
+
+span,
+label,
+button {
+  margin-left: 15px;
+}
+
+/* example of padding vs margin */
+/* ASK: What do you guys notice between using margin and padding? */
+/* MENTION: padding is used to change the content's position within the element's border */
+/* MENTION: margin changes the position of the element in relation to the page layout */
+input {
+  /* margin-left: 5px; */
+  padding: 5px;
+  border-radius: 5px; /* Rounds the corners */
+  border: 1px solid;
+}
+
+select {
+  width: 20%;
+  font-size: 14px;
+}
+
+/* ASK: What do you guys think the :focus does? */
+/* These styles apply when the select element is focused */
+select:focus {
+  outline: none;
+}
+
+/* Accessing IDs in CSS */
+/* ASK: How do we access elements with IDs in CSS? */
+
+/* example of flexbox */
+#basic-inputs {
+  display: flex;
+  flex-direction: row; /* Places children elements in a row */
+  flex-wrap: wrap; /* Show off wrap's responsiveness */
+  gap: 10px; /* Adds some spacing between children elements */
+}
+
+/* example of flexbox */
+#gender-div {
+  display: flex;
+  flex-direction: column; /* Places children elements in a column */
+  align-items: flex-start; /* Moves children elements to the far left */
+  gap: 10px; /* Adds some spacing between children elements */
+}
+
+#major-div {
+  display: flex;
+  flex-direction: column; /* Places children elements in a column */
+  align-items: flex-start; /* Moves children elements to the far left */
+  gap: 10px; /* Adds some spacing between children elements */
+}
+
+/* MENTION: Hold on to your horses guys, the color picker looks odd! */
+#color {
+  padding: 0px;
+  border: 0px;
+  background-color: white;
+}
+
+/* Accessing classes in CSS */
+/* ASK: How do we access elements with classNames in CSS? */
+
+.gender-option {
+  margin-left: 20px;
+}
+
+/* Now let's do something more complex but still ugly :( */
+button {
+  margin-top: 0px;
+  border-radius: 10px;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+
+  font-size: 20px;
+  text-transform: uppercase; /* Makes the font uppercase */
+  font-weight: bold;
+
+  background-color: rgb(216, 216, 216);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Adds a drop shadow */
+
+  cursor: pointer; /* Whenever you hover on the button, the cursor is a pointer */
+
+  transition: background-color 0.5s ease; /* OOH FANCY!! */
+}
+
+/* ASK: What do you guys think the :hover does? */
+/* Styles apply when you hover over the button */
+button:hover {
+  background-color: rgb(169, 235, 255);
+}
