@@ -1,8 +1,8 @@
 # Week 1: Setup, Tools, and HTML 
 
 # Materials
-- [Day 1: Setup and Git](https://docs.google.com/presentation/d/1o6kA5eutIyf49a5sPPaBtZgB0kbs22F2/edit?usp=sharing&ouid=117392730020260659840&rtpof=true&sd=true)
-- [Day 2: HTML](https://docs.google.com/presentation/d/1ebxSS3bR3qJsUOWNYyRfAFnB8-5KHEWf/edit?usp=sharing&ouid=113015579840327057343&rtpof=true&sd=true)
+- [Day 1: Setup and Git](https://docs.google.com/presentation/d/1u8HjlkeVglOqGz3u65VjJmJN6CLDBBuE/edit?usp=drive_link&ouid=109884877973910636402&rtpof=true&sd=true)
+- [Day 2: HTML](https://docs.google.com/presentation/d/1eABkgbm8yLI0xGWd9a5tFVzKKKe49TNQ/edit?usp=drive_link&ouid=109884877973910636402&rtpof=true&sd=true)
 
 ## Commonly Used Terminal Commands
 

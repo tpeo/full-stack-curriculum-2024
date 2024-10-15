@@ -3,8 +3,8 @@
 Welcome to week 2! We hope you had a great week 1 since this is where the course will ramp up a tiny bit. We're going to be teaching y'all the basics of CSS and Javascript in the browser.
 
 # Materials
-- [Day 3: CSS](https://docs.google.com/presentation/d/12X6YKqnyvdNapMTTODEnpiTYYLjKtu4T/edit?usp=sharing&ouid=117392730020260659840&rtpof=true&sd=true)
-- [Day 4: Javascript](https://docs.google.com/presentation/d/1essRh0WoaFv948jVREw5WqM4Y3cPEr0n/edit?usp=sharing&ouid=117392730020260659840&rtpof=true&sd=true)
+- [Day 3: CSS](https://docs.google.com/presentation/d/1TvUItC-usk40GKOYh0CUMnxaNGm9-IsT/edit?usp=drive_link&ouid=109884877973910636402&rtpof=true&sd=true)
+- [Day 4: Javascript](https://docs.google.com/presentation/d/1u04FK2E7oKAVBOLFXYY8_MouheOlQknz/edit?usp=drive_link&ouid=109884877973910636402&rtpof=true&sd=true)
 
 - [Intro to Javascript Slides: ](https://drive.google.com/drive/folders/1Ji7U3P1Siq0I-QAoYcsqdbepSrWaujDq?usp=sharing) we highly recommend you get familiarized with the basics of Javascript before Week 3 (loops, conditionals, etc), and have provided the Javascript slides from Spring 2022.
 
