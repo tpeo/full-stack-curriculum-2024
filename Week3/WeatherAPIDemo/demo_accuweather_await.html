@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather APIs</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div id="main-container">
+      <h4 id="lat"></h4>
+      <h4 id="lon"></h4>
+      <h4 id="temp"></h4>
+      <button id="getTemp" onclick="getData()">Get Temp Jaco CR</button>
+    </div>
+  </body>
+
+  <script>
+    // API key used to authenticate our requests to the OpenWeather API.
+    const apiKey = "ef1f35837935c10aaff7672f865d5fd6";
+
+    // Declare variables to store temperature, latitude, and longitude.
+    let temp;
+    let lat;
+    let lon;
+
+    // This function is async, meaning it can use 'await' to wait for asynchronous operations like API calls.
+    async function getData() {
+      try {
+        // Make the API call to get geographic data (latitude and longitude).
+        // 'await' pauses the code here until the fetch request completes.
+        const locationApiCall = `https://api.openweathermap.org/geo/1.0/direct?q=Jaco,CR&limit=5&appid=${apiKey}`;
+        const locationResponse = await fetch(locationApiCall);
+
+        // 'await' pauses until the response is converted to JSON format.
+        const locationData = await locationResponse.json();
+        console.log(locationData);
+
+        // Extract latitude and longitude from the response data.
+        lat = locationData[0].lat;
+        lon = locationData[0].lon;
+
+        // Display the latitude and longitude on the page.
+        renderLatLon();
+
+        // Now, make the second API call to get the weather data using the lat/lon.
+        const weatherApiCall = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+        const weatherResponse = await fetch(weatherApiCall);
+
+        // Pause until the weather response is converted to JSON format.
+        const weatherData = await weatherResponse.json();
+        console.log(weatherData);
+
+        // Extract temperature from the weather data.
+        temp = weatherData.main.temp;
+
+        // Display the temperature on the page.
+        renderTemp();
+      } catch (error) {
+        // Catch any errors that occur during the fetch requests and log them.
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    // Function to display latitude and longitude on the page.
+    function renderLatLon() {
+      document.querySelector("#lat").innerText = "Lat: " + lat;
+      document.querySelector("#lon").innerText = "Lon: " + lon;
+    }
+
+    // Function to display the temperature on the page.
+    function renderTemp() {
+      document.querySelector("#temp").innerText = "Temp: " + temp;
+    }
+  </script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather APIs</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <div id="main-container">
+      <h4 id="lat"></h4>
+      <h4 id="lon"></h4>
+      <h4 id="temp"></h4>
+      <button id="getTemp" onclick="getData()">
+        Get the Temperature of Austin
+      </button>
+    </div>
+  </body>
+
+  <script>
+    // API key used to authenticate our requests to the OpenWeather API.
+    const apiKey = "6dc87f0d902ad7e89bffc74e3ba537ef";
+
+    // Declare variables to store temperature, latitude, and longitude data.
+    // Declaring them outside of functions so they can be accessed by multiple functions.
+    let temp;
+    let lat;
+    let lon;
+
+    // This function gets called when the user clicks the button to fetch weather data for Austin, Texas.
+    function getData() {
+      // STEP 2: Build the URL for the first API call to get geographic data (latitude and longitude).
+      // We're using template literals to insert our API key and city name (Austin,TX,US) into the URL.
+      let apiCall = `http://api.openweathermap.org/geo/1.0/direct?appid=${apiKey}&q=Austin,TX,US&limit=5`;
+
+      // Fetch the latitude and longitude using the OpenWeather Geo API.
+      // fetch() is used to make HTTP requests. It returns a Promise, meaning the code waits for the API's response.
+      fetch(apiCall)
+        // Convert the response from the API into JSON format, which is a format we can work with in JavaScript.
+        .then((response) => response.json())
+        // Now we have the actual data. This next .then() runs after the first one has completed.
+        .then((data) => {
+          // Log the response to the console so we can see what data we received.
+          console.log(data);
+
+          // STEP 3: Access the latitude and longitude from the API response.
+          // We're taking the first item in the array (data[0]) and extracting its lat and lon properties.
+          lat = data[0].lat;
+          lon = data[0].lon;
+
+          // Log latitude and longitude to the console to confirm they were fetched correctly.
+          console.log("Latitude: " + lat);
+          console.log("Longitude: " + lon);
+
+          // STEP 4: Now that we have the latitude and longitude, display them on the HTML page.
+          renderLatLon();
+
+          // STEP 5: After we have lat/lon, make another API call to fetch the temperature using those coordinates.
+          getTemp();
+        })
+        // In case of any errors with the API call, they will be caught and logged here.
+        .catch((error) =>
+          console.error("Error fetching location data:", error)
+        );
+    }
+
+    // This function displays the latitude and longitude on the HTML page.
+    function renderLatLon() {
+      // Grab the <h4> elements by their IDs and insert the latitude and longitude values we fetched.
+      document.querySelector("#lat").innerText = "Lat: " + lat;
+      document.querySelector("#lon").innerText = "Lon: " + lon;
+    }
+
+    // This function fetches the temperature for the coordinates (lat/lon) we retrieved.
+    function getTemp() {
+      // STEP 6: Build the URL for the weather API call to get the temperature.
+      // We're passing in the latitude, longitude, and API key to get the weather for Jaco, CR.
+      let apiCall = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+
+      // Fetch the weather data (including temperature) using the OpenWeather Weather API.
+      fetch(apiCall)
+        // Convert the response from the API into JSON format.
+        .then((response) => response.json())
+        // Work with the weather data. This .then() runs after the response has been converted to JSON.
+        .then((data) => {
+          // Log the weather data to the console so we can see the full API response.
+          console.log(data);
+
+          // STEP 7: Extract the temperature from the data.
+          // The temperature is located in data.main.temp.
+          temp = data.main.temp;
+
+          // STEP 8: Now that we have the temperature, display it on the HTML page.
+          renderTemp();
+        })
+        // If there’s an error with the weather API call, it will be logged here.
+        .catch((error) => console.error("Error fetching weather data:", error));
+    }
+
+    // This function displays the temperature on the HTML page.
+    function renderTemp() {
+      // Grab the <h4> element for temperature by its ID and insert the temperature we fetched.
+      document.querySelector("#temp").innerText = "Temp: " + temp + " °F";
+    }
+  </script>
+</html>
