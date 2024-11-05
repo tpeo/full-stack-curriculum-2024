@@ -21,11 +21,11 @@ export default function HomePage() {
   // State to hold the list of tasks.
   const [taskList, setTaskList] = useState([
     // Sample tasks to start with.
-    { name: "create a todo app", finished: false },
-    { name: "wear a mask", finished: false },
-    { name: "play roblox", finished: false },
-    { name: "be a winner", finished: true },
-    { name: "become a tech bro", finished: true },
+    { id: 1, name: "create a todo app", finished: false },
+    { id: 2, name: "wear a mask", finished: false },
+    { id: 3, name: "play roblox", finished: false },
+    { id: 4, name: "be a winner", finished: true },
+    { id: 5, name: "become a tech bro", finished: true },
   ]);
 
   // State for the task name being entered by the user.
@@ -43,7 +43,12 @@ export default function HomePage() {
       // In addition to updating the state directly, you should send a request
       // to the API to add a new task and then update the state based on the response.
 
-      setTaskList([...taskList, { name: newTaskName, finished: false }]);
+      const newTask = {
+        id: taskList.length + 1, // Assign a unique ID (simple increment for demonstration)
+        name: newTaskName,
+        finished: false,
+      };
+      setTaskList([...taskList, newTask]);
       setNewTaskName("");
     } else if (taskList.some((task) => task.name === newTaskName)) {
       alert("Task already exists!");
@@ -51,10 +56,10 @@ export default function HomePage() {
   }
 
   // Function to toggle the 'finished' status of a task.
-  function toggleTaskCompletion(taskName) {
+  function toggleTaskCompletion(task) {
     setTaskList(
-      taskList.map((task) =>
-        task.name === taskName ? { ...task, finished: !task.finished } : task
+      taskList.map((t) =>
+        t.id === task.id ? { ...t, finished: !task.finished } : t
       )
     );
 
@@ -132,10 +137,10 @@ export default function HomePage() {
                 <ListItem
                   key={task.name}
                   dense
-                  onClick={() => toggleTaskCompletion(task.name)}
                 >
                   <Checkbox
                     checked={task.finished}
+                    onChange={() => toggleTaskCompletion(task)}
                   />
                   <ListItemText primary={task.name} />
                 </ListItem>
