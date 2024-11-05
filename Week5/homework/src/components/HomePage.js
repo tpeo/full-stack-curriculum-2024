@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Container,
   Typography,
@@ -13,14 +13,13 @@ import {
 } from "@mui/material";
 import Header from "./Header";
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext'
+//import { useAuth } from '../contexts/AuthContext';
 
 export default function HomePage() {
   const navigate = useNavigate();
 
-
   // State to hold the list of tasks.
-  const [tasks, setTasks] = useState([
+  const [taskList, setTaskList] = useState([
     // Sample tasks to start with.
     { name: "create a todo app", finished: false },
     { name: "wear a mask", finished: false },
@@ -30,32 +29,32 @@ export default function HomePage() {
   ]);
 
   // State for the task name being entered by the user.
-  const [taskName, setTaskName] = useState("");
+  const [newTaskName, setNewTaskName] = useState("");
 
   // TODO: Support retrieving your todo list from the API.
   // Currently, the tasks are hardcoded. You'll need to make an API call
   // to fetch the list of tasks instead of using the hardcoded data.
 
-  function addTask() {
+  function handleAddTask() {
     // Check if task name is provided and if it doesn't already exist.
-    if (taskName && !tasks.some((task) => task.name === taskName)) {
+    if (newTaskName && !taskList.some((task) => task.name === newTaskName)) {
 
       // TODO: Support adding todo items to your todo list through the API.
       // In addition to updating the state directly, you should send a request
       // to the API to add a new task and then update the state based on the response.
 
-      setTasks([...tasks, { name: taskName, finished: false }]);
-      setTaskName("");
-    } else if (tasks.some((task) => task.name === taskName)) {
+      setTaskList([...taskList, { name: newTaskName, finished: false }]);
+      setNewTaskName("");
+    } else if (taskList.some((task) => task.name === newTaskName)) {
       alert("Task already exists!");
     }
   }
 
   // Function to toggle the 'finished' status of a task.
-  function updateTask(name) {
-    setTasks(
-      tasks.map((task) =>
-        task.name === name ? { ...task, finished: !task.finished } : task
+  function toggleTaskCompletion(taskName) {
+    setTaskList(
+      taskList.map((task) =>
+        task.name === taskName ? { ...task, finished: !task.finished } : task
       )
     );
 
@@ -65,8 +64,8 @@ export default function HomePage() {
   }
 
   // Function to compute a message indicating how many tasks are unfinished.
-  function getSummary() {
-    const unfinishedTasks = tasks.filter((task) => !task.finished).length;
+  function getUnfinishedTaskMessage() {
+    const unfinishedTasks = taskList.filter((task) => !task.finished).length;
     return unfinishedTasks === 1
       ? `You have 1 unfinished task`
       : `You have ${unfinishedTasks} tasks left to do`;
@@ -87,7 +86,7 @@ export default function HomePage() {
         >
           {/* Display the unfinished task summary */}
           <Typography variant="h4" component="div" fontWeight="bold">
-            {getSummary()}
+            {getUnfinishedTaskMessage()}
           </Typography>
           <Box
             sx={{
@@ -111,16 +110,16 @@ export default function HomePage() {
                   fullWidth
                   variant="outlined"
                   size="small" // makes the textfield smaller
-                  value={taskName}
+                  value={newTaskName}
                   placeholder="Type your task here"
-                  onChange={(event) => setTaskName(event.target.value)}
+                  onChange={(event) => setNewTaskName(event.target.value)}
                 />
               </Grid>
               <Grid item xs={2}>
                 <Button
                   variant="contained"
                   color="primary"
-                  onClick={addTask}
+                  onClick={handleAddTask}
                   fullWidth
                 >
                   Add
@@ -129,11 +128,11 @@ export default function HomePage() {
             </Grid>
             {/* List of tasks */}
             <List sx={{ marginTop: 3 }}>
-              {tasks.map((task) => (
+              {taskList.map((task) => (
                 <ListItem
                   key={task.name}
                   dense
-                  onClick={() => updateTask(task.name)}
+                  onClick={() => toggleTaskCompletion(task.name)}
                 >
                   <Checkbox
                     checked={task.finished}
